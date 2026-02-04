@@ -32,6 +32,7 @@ jobs:
           git config --global user.email "github-actions@github.com"
           sed -i "s|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/mytomcat:latest|g" k8s/deployment.yaml
           echo "# Final Build $(date)" >> k8s/deployment.yaml
+          git add .
           git commit -m "update image [skip ci]"
           git push origin main
 
