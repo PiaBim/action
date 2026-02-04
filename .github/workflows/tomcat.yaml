@@ -34,7 +34,7 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
 
-          sed -i "s|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/mytomcat2:${{ github.sha }}|g" k8s/deployment.yaml
+          sed -i "s|image: .*|image: ${{ secrets.DOCKERHUB_USERNAME }}/mytomcat:${{ github.sha }}|g" k8s/deployment.yaml
 
           git add k8s/deployment.yaml
           git commit -m "update image to ${{ github.sha }} [skip ci]"
