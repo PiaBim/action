@@ -9,7 +9,7 @@ spec:
       app: tomcat
   template:
     metadata:
-      lables:
+      labels:
         app: tomcat
     spec: 
       containers:
